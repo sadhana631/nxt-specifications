@@ -61,7 +61,7 @@ class ProductItemDetails extends Component {
       const fetchedData = await response.json()
       const updatedData = this.getFormattedData(fetchedData)
       const updatedSimilarProductsData = fetchedData.similar_products.map(
-        eachSimilarProduct => this.getFormattedData(eachSimilarProduct)
+        eachSimilarProduct => this.getFormattedData(eachSimilarProduct),
       )
       this.setState({
         productData: updatedData,
@@ -70,12 +70,12 @@ class ProductItemDetails extends Component {
       })  
     }
     if (response.status === 404) {
-      this.setState({
-    })
+      this.setState({})
+    }
   }  
 
   renderLoadingView = () => (
-    <div className="products-details-loader-container-data-testid="loader">
+    <div className="products-details-loader-container" data-testid="loader">
       <Loader type="ThreeDots" color="#0b69ff" height="50" />
     </div>
   )
