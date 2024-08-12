@@ -2,7 +2,7 @@ import {Component} from 'react'
 import {Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
-import {BsPlusSquare, BsDashSquare} from 'react-icons-bs'
+import {BsPlusSquare, BsDashSquare} from 'react-icons/bs'
 
 import Header from '../Header'
 import SimilarProductItem from '../SimilarProductItem'
@@ -96,7 +96,7 @@ class ProductItemDetails extends Component {
     </div>    
   )
 
-  onDecreaseQuanting = () => {
+  onDecreaseQuantity = () => {
     const {quantity} = this.state
     if (quantity >1) {
       this.setState(prevState => ({quantity: prevState.quantity -1}))
@@ -155,6 +155,7 @@ class ProductItemDetails extends Component {
                   onClick={this.onDecrementQuantity}
                   data-testid="minus"
                 >
+                  <BsDashSquare className="quantity-controller-icon" />
                 </button>
                 <p className="quantity">{quantity}</p>
                 <button
@@ -176,7 +177,7 @@ class ProductItemDetails extends Component {
               {similarProductsData.map(eachSimilarProduct => (
                 <SimilarProductItem
                   productDetails={eachSimilarProduct}
-                  key={eachSimilarProduct}
+                  key={eachSimilarProduct.id}
                 />
               ))}    
             </ul>
