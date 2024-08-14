@@ -185,7 +185,7 @@ class ProductItemDetails extends Component {
     )
   }
 
-  renderProductDetails = () => {
+  renderProductDetailsView = () => {
     const {apiStatus} = this.state
 
     switch (apiStatus) {
