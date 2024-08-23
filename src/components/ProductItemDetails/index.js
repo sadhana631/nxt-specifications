@@ -4,7 +4,6 @@ import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import {BsPlusSquare, BsDashSquare} from 'react-icons/bs'
 
-import Header from '../Header'
 import SimilarProductItem from '../SimilarProductItem'
 
 import './index.css'
@@ -23,7 +22,6 @@ class ProductItemDetails extends Component {
     apiStatus: apiStatusConstants.initial,
     quantity: 1,
   }
-}  
  
 componentDidMount() {
    this.getProductData()
@@ -120,7 +118,7 @@ getFormattedData = data => ({
       title,
       totalReviews,
     } = productData
-  
+    
     return (
       <div className="product-details-success-view">
         <div className="product-details-container">
@@ -187,9 +185,10 @@ getFormattedData = data => ({
       </div>    
     )
   }
-
+}  
+  
 export default ProductItemDetails
   
 
 
-  
+   
